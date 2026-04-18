@@ -262,12 +262,16 @@ function renderAnnotation(
           fill={ann.fillColor}
         />
       );
-          x: ann.x,
-          y: ann.y,
-          text: ann.text,
-          fontSize: ann.fontSize,
-          fill: ann.color,
-          onClick: () => onClick(ann)
+    case 'text':
+      return (
+        <Text
+          key={ann.id}
+          x={ann.x}
+          y={ann.y}
+          text={ann.text}
+          fontSize={ann.fontSize}
+          fill={ann.color}
+          onClick={() => onClick(ann)}
         />
       );
     case 'note':
